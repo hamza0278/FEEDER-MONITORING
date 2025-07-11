@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,14 +45,17 @@
 </head>
 <body>
   <div class="login-box">
-    <h2>Admin Login</h2>
-    <input type="text" id="username" placeholder="Username" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <button onclick="login()">Login</button>
+    <h2>Login / Signup</h2>
+    <form onsubmit="handleLogin(event)">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
   </div>
 
   <script>
-    function login() {
+    function handleLogin(e) {
+      e.preventDefault(); // Prevent default form submission
       const user = document.getElementById('username').value;
       const pass = document.getElementById('password').value;
       if (user === 'admin' && pass === 'hamza0099887') {
